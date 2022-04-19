@@ -4,7 +4,7 @@ import com.sdo.SDOServiceWell;
 import com.services.EquipmentService;
 import com.utility.NewDatabase;
 import com.utility.NewFile;
-import com.utility.ParseSQLForXML;
+import com.utility.XMLXStream;
 
 import java.util.Scanner;
 
@@ -84,7 +84,7 @@ public class StartProgramm {
         System.out.println("Введите имя файла для экспорта в XML");
         String pathName=sc.next();
         pathName+=".xml";
-        ParseSQLForXML.inputInfoInFile(pathName,CON_STR);
+        XMLXStream.outputXML(pathName,CON_STR);
     }
     private static void updateWell(Scanner sc){
         System.out.println("Введите имя изменяемой скважины");
