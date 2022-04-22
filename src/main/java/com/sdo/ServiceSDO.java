@@ -4,6 +4,6 @@ import ru.ep.sdo.Session;
 
 public interface ServiceSDO {
     public Session createProperties();
-    public void getAll();
+    public String getAll();
     public void renameObject(String oldName,String newName);
 }

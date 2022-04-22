@@ -34,9 +34,10 @@ public class SDOServiceWell implements ServiceSDO {
         return SessionFactory.getInstance().createSessionFromFile("my.xml",properties);
     }
 
-    public void getAll() {
+    public String getAll() {
         Session session = createProperties();
 
+        String list="";
         XMLListModel listModel = session.getListModel("SDOSQlite.Well");
 
         Iterator iterator = listModel.iterator();
@@ -44,10 +45,11 @@ public class SDOServiceWell implements ServiceSDO {
         if(!iterator.hasNext()) System.out.println("Скважин ещё нет");
         while(iterator.hasNext()){
         	  Well well = (Well)iterator.next();
-              System.out.println("Скважина "+well.getName());
+              list+="Скважина "+well.getName()+System.lineSeparator()+"";
         	//System.out.println(iterator.next());
             }
-
+        session.close();
+        return list;
     }
 
     public void renameObject(String oldName, String newName) {
@@ -65,6 +67,7 @@ public class SDOServiceWell implements ServiceSDO {
         well.setName(newName);
         System.out.println(well.getName());
         session.commit();
+        session.close();
         }
     }
 }

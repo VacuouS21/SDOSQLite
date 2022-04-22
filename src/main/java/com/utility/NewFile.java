@@ -7,6 +7,7 @@ public class NewFile {
         try {
             // Возьмите файл
             File f = new File(fileName);
+            System.out.print(f.getAbsolutePath());
             //Создайте новый файл
             // Убедитесь, что он не существует
             if (f.createNewFile())

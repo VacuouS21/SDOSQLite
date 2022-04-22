@@ -71,16 +71,17 @@ public class EquipmentService {
     }
 
     //ВТорой выбор, для подсчёта количества оборудования на скважине wellName
-    public void countEquipment(String wellName) {
+    public String countEquipment(String wellName) {
         String sql = "SELECT count() FROM equipment JOIN well w on w.id = equipment.well_id WHERE w.name=(?);";
         //Работа с бд
         try {
             PreparedStatement statement = connection.prepareStatement(sql);
             statement.setString(1, wellName);
-            System.out.println("Кол-во оборудования на скважине " + wellName + ": " + statement.executeQuery().getInt(1));
+            return("Кол-во оборудования на скважине " + wellName + ": " + statement.executeQuery().getInt(1));
         } catch (SQLException e) {
             e.printStackTrace();
         }
+		return "";
 
     }
 

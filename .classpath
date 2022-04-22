@@ -52,5 +52,7 @@
 	<classpathentry kind="lib" path="E:/1Стажировка/Библиотек/xerces_2_11_0.jar"/>
 	<classpathentry kind="lib" path="E:/1Стажировка/Библиотек/xml-apis.jar"/>
 	<classpathentry kind="lib" path="E:/1Стажировка/sqlite-jdbc-3.36.0.3.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.web.container"/>
+	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.module.container"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>
